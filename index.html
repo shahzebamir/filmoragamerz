@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filmoragamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #00ff99;
+        }
+
+        a:hover {
+            text-shadow: 0 0 10px #00ff99;
+        }
+
+        /* Header */
+        #header-wrapper {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            padding: 0px 0;
+            opacity: 0;
+            animation: fadeInHeader 1s forwards;
+        }
+
+        #logo h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            color: #00ff99;
+            text-shadow: 0 0 10px #00ff99, 0 0 20px #005533;
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        #menu ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        #menu li {
+            margin: 0 15px;
+        }
+
+        #menu a {
+            font-size: 1.3em;
+            font-weight: 700;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        #menu a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px #00ff99, 0 0 16px #005533;
+        }
+
+        /* Welcome Section */
+        #welcome {
+            text-align: center;
+            padding: 50px 20px;
+            background: url('https://source.unsplash.com/1600x900/?gaming') no-repeat center;
+            background-size: cover;
+            color: #ffffff;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 0.5s forwards;
+        }
+
+        #welcome .title h2 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #00ff99;
+            animation: zoomIn 1s ease-out;
+        }
+
+        #welcome .content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .button {
+            display: inline-block;
+            background: #00ff99;
+            color: #0d0d0d;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            animation: buttonHover 1s ease-in-out infinite;
+        }
+
+        .button:hover {
+            animation: none;
+            background: #005533;
+            transform: scale(1.1);
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #1a1a1a;
+        }
+
+        #portfolio h2 {
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #00ff99;
+            animation: slideInLeft 1.5s ease-out forwards;
+        }
+
+        .box {
+            background: #121212;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+            display: inline-block;
+            text-align: left;
+            animation: slideUp 1s ease-out;
+            opacity: 0;
+        }
+
+        .box:hover img {
+            transform: scale(1.05);
+        }
+
+        .box img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 4px solid #00bfae;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Footer */
+        #footer {
+            background: linear-gradient(135deg, #1a1a1a, #000000);
+            padding: 20px;
+            text-align: center;
+            color: #cccccc;
+        }
+
+        #footer .icon {
+            font-size: 1.5em;
+            margin: 0 10px;
+            color: #00ff99;
+            transition: color 0.3s ease;
+        }
+
+        #footer .icon:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00ff99, 0 0 20px #005533;
+        }
+
+        /* Keyframes for Animations */
+       
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes slideInLeft {
+            101% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInHeader {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+            
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInHeader {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-wrapper">
+        <header id="logo">
+            <h1>ZohaibGamer</h1>
+        </header>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="generic.html">Games</a></li>
+                <li><a href="communication.html">Communication</a></li>
+                <li><a href="element.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section id="welcome">
+        <div class="title">
+            <h2>Welcome to Filmora Gamerz</h2>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="content">
+                    <video controls width="640" height="360">
+                        <source src="\projecy3\videos\Untitled video - Made with Clipchamp (1).mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Other Channel</h2>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>My Image Gallery</title>
+            <style>
+                /* Body styles */
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    text-align: center;
+                }
+        
+                /* Container for images */
+                .image-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px;
+                    padding: 20px;
+                    flex-wrap: wrap;
+                }
+        
+                /* Image styling */
+                .image-container img {
+                    border: 5px solid #ddd;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    max-width: 100%;
+                    height: auto;
+                }
+        
+                /* Hover effect */
+                .image-container img:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                }
+        
+                /* Title styles */
+                h1 {
+                    color: #333;
+                    margin-top: 20px;
+                }
+        
+            </style>
+        </head>
+        <body>
+        
+            <h1>Joine Over family</h1>
+        
+            <div class="image-container">
+                <!-- Image 1 (Clickable, opens YouTube Channel) -->
+                <a href="https://youtube.com/@abackmusic-160?si=9x3tU8ohn84ohtyx" target="_blank">
+                    <img src="H:\projecy3\image\WhatsApp Image 2024-11-13 at 15.49.55_a33e1022.jpg" alt="Futuristic Cityscape" width="500">
+                </a>
+        
+                <!-- Image 2 (Clickable, opens YouTube Channel) -->
+                <a href="https://youtube.com/@filmoragamerz?si=Z7GRF6WVOnykH8gQ" target="_blank">
+                    <img src="H:\projecy3\image\music mix_20240801_131359_0000.png" alt="Fantasy Forest" width="500">
+                </a>
+            </div>
+        
+        </body>
+        </html>
+        
+
+    <footer id="footer">
+        <div>
+            <i class="icon">🔗</i>
+            <i class="icon">🔔</i>
+            <i class="icon">📡</i>
+        </div>
+    </footer>
+
+</body>
+</html>
